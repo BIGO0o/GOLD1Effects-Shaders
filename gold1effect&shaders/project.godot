@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="GOLD1Effect&Shaders"
+run/main_scene="uid://btlt2dc20vjro"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

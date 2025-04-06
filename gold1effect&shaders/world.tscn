@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://btlt2dc20vjro"]
+
+[ext_resource type="Texture2D" uid="uid://b6cj76oqbfx7l" path="res://icon.svg" id="1_f3sb7"]
+[ext_resource type="Shader" uid="uid://bk0x7gt5ite47" path="res://shader scripts/test1.gdshader" id="2_fj7yv"]
+[ext_resource type="Shader" uid="uid://chwgqkevsjky8" path="res://shader scripts/test2.gdshader" id="3_tlwt5"]
+[ext_resource type="Shader" uid="uid://d04ib8cas0k56" path="res://shader scripts/test3.gdshader" id="4_aqk2v"]
+[ext_resource type="Shader" uid="uid://ctyoyhift00t0" path="res://shader scripts/test4.gdshader" id="5_036b0"]
+[ext_resource type="Shader" uid="uid://dj78kck5tdx82" path="res://test5.gdshader" id="6_dwbse"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlwt5"]
+shader = ExtResource("2_fj7yv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqk2v"]
+shader = ExtResource("3_tlwt5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_036b0"]
+shader = ExtResource("4_aqk2v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwbse"]
+shader = ExtResource("5_036b0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkg7o"]
+shader = ExtResource("6_dwbse")
+shader_parameter/anim_speed = 0.0
+shader_parameter/star_brightness = 0.05
+shader_parameter/dust = 0.125
+shader_parameter/dist_fade = 0.35
+shader_parameter/pixelation = 1000.0
+shader_parameter/quantization_levels = 256
+shader_parameter/dust_color = Color(0, 55, 75, 1)
+shader_parameter/saturation = 1.0
+shader_parameter/layers = 7.0
+shader_parameter/iterations = 12
+
+[node name="world" type="Node"]
+
+[node name="control" type="Sprite2D" parent="."]
+position = Vector2(116, 266)
+texture = ExtResource("1_f3sb7")
+
+[node name="test1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tlwt5")
+position = Vector2(274, 265)
+texture = ExtResource("1_f3sb7")
+
+[node name="test2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aqk2v")
+position = Vector2(448, 263)
+texture = ExtResource("1_f3sb7")
+
+[node name="test3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_036b0")
+position = Vector2(605, 266)
+texture = ExtResource("1_f3sb7")
+
+[node name="test4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dwbse")
+position = Vector2(778, 264)
+texture = ExtResource("1_f3sb7")
+
+[node name="test5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pkg7o")
+position = Vector2(966, 265)
+texture = ExtResource("1_f3sb7")
