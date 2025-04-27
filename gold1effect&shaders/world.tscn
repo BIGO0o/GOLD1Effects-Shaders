@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://btlt2dc20vjro"]
+[gd_scene load_steps=14 format=3 uid="uid://btlt2dc20vjro"]
 
 [ext_resource type="Texture2D" uid="uid://b6cj76oqbfx7l" path="res://icon.svg" id="1_f3sb7"]
 [ext_resource type="Shader" uid="uid://bk0x7gt5ite47" path="res://shader scripts/test1.gdshader" id="2_fj7yv"]
 [ext_resource type="Shader" uid="uid://chwgqkevsjky8" path="res://shader scripts/test2.gdshader" id="3_tlwt5"]
 [ext_resource type="Shader" uid="uid://d04ib8cas0k56" path="res://shader scripts/test3.gdshader" id="4_aqk2v"]
 [ext_resource type="Shader" uid="uid://ctyoyhift00t0" path="res://shader scripts/test4.gdshader" id="5_036b0"]
-[ext_resource type="Shader" uid="uid://dj78kck5tdx82" path="res://test5.gdshader" id="6_dwbse"]
+[ext_resource type="Shader" uid="uid://bnjuswtbtnuky" path="res://shader scripts/test6.gdshader" id="6_dwbse"]
+[ext_resource type="Shader" uid="uid://dj78kck5tdx82" path="res://shader scripts/test5.gdshader" id="6_pkg7o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlwt5"]
 shader = ExtResource("2_fj7yv")
@@ -20,7 +21,7 @@ shader = ExtResource("4_aqk2v")
 shader = ExtResource("5_036b0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pkg7o"]
-shader = ExtResource("6_dwbse")
+shader = ExtResource("6_pkg7o")
 shader_parameter/anim_speed = 0.0
 shader_parameter/star_brightness = 0.05
 shader_parameter/dust = 0.125
@@ -31,6 +32,9 @@ shader_parameter/dust_color = Color(0, 55, 75, 1)
 shader_parameter/saturation = 1.0
 shader_parameter/layers = 7.0
 shader_parameter/iterations = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gbfbk"]
+shader = ExtResource("6_dwbse")
 
 [node name="world" type="Node"]
 
@@ -60,5 +64,10 @@ texture = ExtResource("1_f3sb7")
 
 [node name="test5" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_pkg7o")
-position = Vector2(966, 265)
+position = Vector2(958, 265)
+texture = ExtResource("1_f3sb7")
+
+[node name="test6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gbfbk")
+position = Vector2(118, 427)
 texture = ExtResource("1_f3sb7")
