@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://btlt2dc20vjro"]
+[gd_scene load_steps=18 format=3 uid="uid://btlt2dc20vjro"]
 
 [ext_resource type="Texture2D" uid="uid://b6cj76oqbfx7l" path="res://icon.svg" id="1_f3sb7"]
-[ext_resource type="Shader" uid="uid://bk0x7gt5ite47" path="res://shader scripts/test1.gdshader" id="2_fj7yv"]
-[ext_resource type="Shader" uid="uid://chwgqkevsjky8" path="res://shader scripts/test2.gdshader" id="3_tlwt5"]
-[ext_resource type="Shader" uid="uid://d04ib8cas0k56" path="res://shader scripts/test3.gdshader" id="4_aqk2v"]
-[ext_resource type="Shader" uid="uid://ctyoyhift00t0" path="res://shader scripts/test4.gdshader" id="5_036b0"]
-[ext_resource type="Shader" uid="uid://bnjuswtbtnuky" path="res://shader scripts/test6.gdshader" id="6_dwbse"]
-[ext_resource type="Shader" uid="uid://dj78kck5tdx82" path="res://shader scripts/test5.gdshader" id="6_pkg7o"]
+[ext_resource type="Shader" uid="uid://bk0x7gt5ite47" path="res://testShaders/test1.gdshader" id="2_fj7yv"]
+[ext_resource type="Shader" uid="uid://chwgqkevsjky8" path="res://testShaders/test2.gdshader" id="3_tlwt5"]
+[ext_resource type="Shader" uid="uid://d04ib8cas0k56" path="res://testShaders/test3.gdshader" id="4_aqk2v"]
+[ext_resource type="Shader" uid="uid://ctyoyhift00t0" path="res://testShaders/test4.gdshader" id="5_036b0"]
+[ext_resource type="Shader" uid="uid://bnjuswtbtnuky" path="res://shader scripts/1.gdshader" id="6_dwbse"]
+[ext_resource type="Shader" uid="uid://dj78kck5tdx82" path="res://testShaders/test5.gdshader" id="6_pkg7o"]
+[ext_resource type="Shader" uid="uid://bxo8dklioldys" path="res://shader scripts/2.gdshader" id="8_gbfbk"]
+[ext_resource type="Shader" uid="uid://21q6lstrwopx" path="res://shader scripts/3.gdshader" id="9_ioo17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlwt5"]
 shader = ExtResource("2_fj7yv")
@@ -36,38 +38,98 @@ shader_parameter/iterations = 12
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gbfbk"]
 shader = ExtResource("6_dwbse")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ioo17"]
+shader = ExtResource("8_gbfbk")
+shader_parameter/strength = 10.0
+shader_parameter/speed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wse8f"]
+shader = ExtResource("9_ioo17")
+shader_parameter/cirkelGrootte = 100.0
+shader_parameter/rotatieSnelheid = 1.0
+
 [node name="world" type="Node"]
 
-[node name="control" type="Sprite2D" parent="."]
-position = Vector2(116, 266)
-texture = ExtResource("1_f3sb7")
+[node name="testen" type="Node" parent="."]
 
-[node name="test1" type="Sprite2D" parent="."]
+[node name="test1" type="Sprite2D" parent="testen"]
 material = SubResource("ShaderMaterial_tlwt5")
-position = Vector2(274, 265)
+position = Vector2(276, 109)
 texture = ExtResource("1_f3sb7")
 
-[node name="test2" type="Sprite2D" parent="."]
+[node name="test2" type="Sprite2D" parent="testen/test1"]
 material = SubResource("ShaderMaterial_aqk2v")
-position = Vector2(448, 263)
+position = Vector2(172, -5)
 texture = ExtResource("1_f3sb7")
 
-[node name="test3" type="Sprite2D" parent="."]
+[node name="test3" type="Sprite2D" parent="testen/test1"]
 material = SubResource("ShaderMaterial_036b0")
-position = Vector2(605, 266)
+position = Vector2(361, -14)
 texture = ExtResource("1_f3sb7")
 
-[node name="test4" type="Sprite2D" parent="."]
+[node name="test4" type="Sprite2D" parent="testen/test1/test3"]
 material = SubResource("ShaderMaterial_dwbse")
-position = Vector2(778, 264)
+position = Vector2(167, 4)
 texture = ExtResource("1_f3sb7")
 
-[node name="test5" type="Sprite2D" parent="."]
+[node name="test5" type="Sprite2D" parent="testen/test1/test3/test4"]
 material = SubResource("ShaderMaterial_pkg7o")
-position = Vector2(958, 265)
+position = Vector2(186, 3)
 texture = ExtResource("1_f3sb7")
 
-[node name="test6" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_gbfbk")
-position = Vector2(118, 427)
+[node name="control" type="Sprite2D" parent="."]
+position = Vector2(98, 112)
 texture = ExtResource("1_f3sb7")
+
+[node name="1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gbfbk")
+position = Vector2(251, 440)
+texture = ExtResource("1_f3sb7")
+
+[node name="2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ioo17")
+position = Vector2(563, 440)
+texture = ExtResource("1_f3sb7")
+
+[node name="3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wse8f")
+position = Vector2(886, 432)
+texture = ExtResource("1_f3sb7")
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.018
+offset_left = 538.0
+offset_top = 276.0
+offset_right = 585.0
+offset_bottom = 294.336
+text = "2"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.018
+offset_left = 218.0
+offset_top = 271.0
+offset_right = 265.0
+offset_bottom = 319.902
+text = "1"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.018
+offset_left = 233.0
+offset_top = 179.0
+offset_right = 1126.0
+offset_bottom = 228.336
+text = "Bovenstaande zijn test shaders, zijn dus niet voor de assignement bedoeld!
+In de map: \"shader scripts\" staan de shaders, overeenkomstig met de nummers hieronder"
+
+[node name="Label4" type="Label" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.018
+offset_left = 871.0
+offset_top = 406.0
+offset_right = 881.0
+offset_bottom = 434.336
+text = "3
+"
